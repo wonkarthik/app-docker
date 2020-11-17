@@ -3,6 +3,10 @@
 The Docker Image aims to quickly get up-and-running a JasperReports Server for a development environment.
 
 ## Start the Container
+### Install Docker and Docker compose software on your linux host
+execute the `./docker-install.sh` file to install the docker and docker-compose packages and start the respective service
+
+check the services are running fine `systemctl status docker.service` and `docker-compose --help`    
 
 ### Using Command Line
 
