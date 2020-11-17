@@ -2,8 +2,6 @@
 
 The Docker Image aims to quickly get up-and-running a JasperReports Server for a development environment.
 
-[![](https://images.microbadger.com/badges/image/retriever/jasperserver.svg)](https://microbadger.com/images/retriever/jasperserver "Get your own image badge on microbadger.com")
-
 ## Start the Container
 
 ### Using Command Line
@@ -43,17 +41,3 @@ This image includes:
 * Waits for the database to start before connecting to it using [wait-for-it](https://github.com/vishnubob/wait-for-it) as recommended by [docker-compose documentation](https://docs.docker.com/compose/startup-order/).
 * [Web Service Data Source plugin](https://community.jaspersoft.com/project/web-service-data-source) contributed by [@chiavegatto](https://github.com/chiavegatto)
 
-## How to build this image
-Use `docker build -t retriever/jasperserver .` 
-
-See comments in Dockerfile to speed up testing by not having to download the jasperserver release each time.
-
-## Troubleshooting
-If you are having problems starting the containers because of a MySQL error like "[ERROR] [FATAL] Innodb: Table flags are 0...", then you will need to delete the data_dir which contains the MySQL database and then recreate the containers. Please note that you will lose any data previously stored in the database.
-
-## How to release a new image version
-This repo is setup to trigger an automated build of the image [retriever/jaserpserver](https://hub.docker.com/r/retriever/jasperserver/) on Docker Hub.
-
-To make a new official version of the image, just push a git Tag using the naming convention `major.minor.iteration` where:
-* major and minor line up with the included version of jasperserver 
-* iteration is incremented each time a change is done that isn't an upgrade of the included jasperserver version
